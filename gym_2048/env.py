@@ -2,7 +2,7 @@ import numpy as np
 import gym
 import gym.spaces as spaces
 from gym.utils import seeding
-
+import random
 
 class Base2048Env(gym.Env):
   metadata = {
