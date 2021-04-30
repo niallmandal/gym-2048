@@ -54,9 +54,12 @@ class Base2048Env(gym.Env):
     # Align board action with left action
     rotated_obs = np.rot90(self.board, k=action)
     reward, updated_obs = self._slide_left_and_merge(rotated_obs)
-    self.board = np.rot90(updated_obs, k=4 - action)
+    
     if np.array_equal(updated_obs, self.board):
       print("Repeated Action")
+     
+    self.board = np.rot90(updated_obs, k=4 - action)
+    
     # Place one random tile on empty location
     self._place_random_tiles(self.board, count=1)
 
