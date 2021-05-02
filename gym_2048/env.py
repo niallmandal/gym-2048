@@ -56,7 +56,7 @@ class Base2048Env(gym.Env):
     reward, updated_obs = self._slide_left_and_merge(rotated_obs)
     
     if np.array_equal(updated_obs, self.board):
-      #print("No board change")
+      print("No board change")
       for i in range(50):
         action = random.choice([0,1,2,3])
         rotated_obs = np.rot90(self.board, k=action)
