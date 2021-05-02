@@ -54,7 +54,7 @@ class Base2048Env(gym.Env):
     # Align board action with left action
     rotated_obs = np.rot90(self.board, k=action)
     reward, updated_obs = self._slide_left_and_merge(rotated_obs)
-    
+    print("step")
     if np.array_equal(updated_obs, self.board):
       print("No board change")
       for i in range(50):
